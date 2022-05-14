@@ -30,7 +30,6 @@ articles = soup.find_all('article')
 for article in articles:
     hubs = article.find_all(class_='tm-article-snippet__hubs-item')
     hubs = set(hub.text.strip() for hub in hubs)
-    # print(hubs)
     for hub in hubs:
         if hub in KEYWORDS:
             href = article.find(class_='tm-article-snippet__title-link').attrs['href']
